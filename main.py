@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Jun 27 15:54:50 2021
-
 @author: joshi
 """
 from flask import Flask, render_template, request
@@ -10,7 +9,6 @@ import jsonify
 import requests
 import pickle
 import numpy as np
-import joblib
 from sklearn import *
 from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
