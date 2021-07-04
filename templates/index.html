@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Diseaase Prediction</title>
+</head>
+
+<body>
+
+    <div>
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="container">
+                <div class="heading">
+                    <h2>Heart Disease Prediction</h2>
+                </div>
+                <section class="img-content">
+                    <div class="img">
+                        <img src="{{url_for('static',filename = 'heart.jpg')}}" >
+                    </div> 
+                </section>
+                <section class="content">
+                    <div class="result">{{ prediction_text }}</div>
+                    <table>
+                        <tr>
+                            <div class="align-data">
+                                <td>Age </td>
+                                <td><input class="inputfield" name="age" type="number" placeholder="30"></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Gender </td>
+                                <td><select name="gender" class="inputfield" required="required">
+                                    <option value="0">Female</option>
+                                    <option value="1">Male</option>
+                                </select></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Chest Pain </td>
+                                <td><select name="chest_pain" class="inputfield" required="required">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Resting Blood Pressure </td>
+                                <td><input class="inputfield" name="trestbps" required="required" placeholder="200"></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Cholesterol </td>
+                                 <td><input class="inputfield" name="chol" required="required" placeholder="150"></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Fasting Blood Sugar </td>
+                                <td><select name="fbs" class="inputfield" required="required">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                </select></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Resting EKG results </td>
+                                <td><select name="restecg" class="inputfield" required="required">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Thalach - Maximum heart rate achieved </td>
+                                 <td><input class="inputfield" name="thalach" required="required" placeholder="160"></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Exercise induced angina </td>
+                                <td><select name="exang" class="inputfield" required="required">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                </select></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Old Peak </td>
+                                 <td><input class="inputfield" name="oldpeak" required="required" placeholder="2.3"></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Slope </td>
+                                <td><select name="slope" class="inputfield" required="required">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>CA </td>
+                                <td><select name="ca" class="inputfield" required="required">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="align-data">
+                                <td>Thal </td>
+                                <td><select name="thal" class="inputfield" required="required">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="2">3</option>
+                                </select></td>
+                            </div>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td></td>
+                            <br><td><button id="sub" class="submit-btn" type="submit ">Submit </button>
+                            <br></td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </form>
+    </div>
+
+
+    <style>
+        img{
+            position: absolute;
+        }
+        table{
+            position: relative;
+            margin-left: 400px;
+        }
+        td{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .heading{
+            text-align: center;
+        }
+        .inputfield{
+            border-radius: 14px;
+            margin: 15px;
+            height: 25px;
+            font-size: 20px;
+            background-color: transparent;
+        }
+        ::placeholder{
+            color: lightgray;
+            padding-left: 10px;
+            font-size: 16px;
+        }
+        .submit-btn{
+            cursor: pointer;
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: right;
+            padding: 0 15px;
+            height: 40px;
+            color: black;
+            background-color: lightgray;
+            border-radius: 20px;
+        }
+        .result{
+            text-align: center;
+            font-size: 30px;
+            color: red;
+        }
+    </style>
+
+</body>
+
+</html>
