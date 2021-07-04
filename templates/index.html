@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Diseaase Prediction</title>
+
 </head>
 
 <body>
@@ -12,17 +13,15 @@
     <div>
         <form action="{{ url_for('predict')}}" method="post">
             <div class="container">
-                <div class="heading">
+                <div class="nav">
                     <h2>Heart Disease Prediction</h2>
                 </div>
-                <section class="img-content">
-                    <div class="img">
-                        <img src="{{url_for('static',filename = 'heart.jpg')}}" >
-                    </div> 
-                </section>
                 <section class="content">
                     <div class="result">{{ prediction_text }}</div>
-                    <table>
+                    <table class="glass">
+                        <tr class="txt">
+                            <td>Please fill the details correctly!</td>
+                        </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Age </td>
@@ -33,112 +32,119 @@
                             <div class="align-data">
                                 <td>Gender </td>
                                 <td><select name="gender" class="inputfield" required="required">
-                                    <option value="0">Female</option>
-                                    <option value="1">Male</option>
-                                </select></td>
+                                        <option value="0">Female</option>
+                                        <option value="1">Male</option>
+                                    </select></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Chest Pain </td>
                                 <td><select name="chest_pain" class="inputfield" required="required">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select></td>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Resting Blood Pressure </td>
-                                <td><input class="inputfield" name="trestbps" required="required" placeholder="200"></td>
+                                <td><input class="inputfield" name="trestbps" required="required" placeholder="200">
+                                </td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Cholesterol </td>
-                                 <td><input class="inputfield" name="chol" required="required" placeholder="150"></td>
+                                <td><input class="inputfield" name="chol" required="required" placeholder="150"></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Fasting Blood Sugar </td>
                                 <td><select name="fbs" class="inputfield" required="required">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                </select></td>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                    </select></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Resting EKG results </td>
                                 <td><select name="restecg" class="inputfield" required="required">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                </select></td>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Thalach - Maximum heart rate achieved </td>
-                                 <td><input class="inputfield" name="thalach" required="required" placeholder="160"></td>
+                                <td><input class="inputfield" name="thalach" required="required" placeholder="160"></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Exercise induced angina </td>
                                 <td><select name="exang" class="inputfield" required="required">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                </select></td>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                    </select></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Old Peak </td>
-                                 <td><input class="inputfield" name="oldpeak" required="required" placeholder="2.3"></td>
+                                <td><input class="inputfield" name="oldpeak" required="required" placeholder="2.3"></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Slope </td>
                                 <td><select name="slope" class="inputfield" required="required">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                </select></td>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>CA </td>
                                 <td><select name="ca" class="inputfield" required="required">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select></td>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select></td>
                             </div>
                         </tr>
                         <tr>
                             <div class="align-data">
                                 <td>Thal </td>
                                 <td><select name="thal" class="inputfield" required="required">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="2">3</option>
-                                </select></td>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="2">3</option>
+                                    </select></td>
                             </div>
                         </tr>
                         <br>
                         <tr>
                             <td></td>
-                            <br><td><button id="sub" class="submit-btn" type="submit ">Submit </button>
-                            <br></td>
+                            <br>
+                            <td>
+                                <div class="submit-btn">
+                                    <button id="sub" class="btn" type="submit ">Submit
+                                    </button>
+                                </div>
+                                <br>
+                            </td>
                         </tr>
                     </table>
                 </section>
@@ -148,47 +154,96 @@
 
 
     <style>
-        img{
+        :root {
+            --outer-shadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+            --inner-shadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;
+        }
+
+        body {
+            /* background-color: lightblue; */
+            font-family: 'Times New Roman', Times, serif;
+            background-image: linear-gradient(to bottom right, #B5EAEA, #EDF6E5, #FFBCBC)
+        }
+
+        .btn {
+            background-color: lightgray;
+            border-color: darkgrey;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10%;
+        }
+        .glass {
+            padding: 80px;
+            background: rgba(255, 255, 255, 0.30);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(20.0px);
+            -webkit-backdrop-filter: blur(20.0px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        img {
             position: absolute;
         }
-        table{
+
+        table {
             position: relative;
-            margin-left: 400px;
+            margin-left: 300px;
         }
-        td{
+
+        td {
             font-weight: bold;
             font-size: 16px;
         }
-        .heading{
+
+        .nav {
             text-align: center;
+            background-color: #333;
+            overflow: hidden;
+            color: whitesmoke;
         }
-        .inputfield{
-            border-radius: 14px;
+
+        .inputfield {
+            border-radius: 7px;
             margin: 15px;
             height: 25px;
-            font-size: 20px;
+            font-size: 15px;
             background-color: transparent;
         }
-        ::placeholder{
-            color: lightgray;
+
+        ::placeholder {
+            color: darkgrey;
             padding-left: 10px;
             font-size: 16px;
         }
-        .submit-btn{
+
+        .btn-1 {
+            padding: 10px 25px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--skin-color);
+            background-color: transparent;
+            line-height: 1.5;
             cursor: pointer;
-            flex: 0 0 100%;
-            max-width: 100%;
-            text-align: right;
-            padding: 0 15px;
-            height: 40px;
-            color: black;
-            background-color: lightgray;
-            border-radius: 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
         }
-        .result{
+
+        .btn-1:after {
+            border-radius: 30px;
+        }
+
+        .result {
             text-align: center;
             font-size: 30px;
-            color: red;
+            color: black;
         }
     </style>
 
