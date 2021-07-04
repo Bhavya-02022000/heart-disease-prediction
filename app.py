@@ -10,6 +10,7 @@ import jsonify
 import requests
 import pickle
 import numpy as np
+import joblib
 from sklearn import *
 from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
