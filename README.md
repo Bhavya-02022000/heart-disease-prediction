@@ -2,5 +2,5 @@
 
 Predicting the risk of heart disease based on various factors. Logistic regression is used to build the model
 
-Visit this website for viewing the project
+Have a look at the project
 https://heart-disease-prediction-lgr.herokuapp.com/
